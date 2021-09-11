@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">
+        <h1>
+            Bizzle
+        </h1>
+        <img src="https://vignette.wikia.nocookie.net/clubpenguin/images/6/6f/Magnifying_Glass.PNG/revision/latest?cb=20150207155320" alt="">
+    </div>
+    <div>
+        <form class="container-1"  action="/" method="post">
+            <div class="form-search">
+                <input class="field" type="text" placeholder="Search 🔍" name="keyword">
+            </div>
+            <div class="form-button">
+                <input class="btn" type="submit" name="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <% if(hasSearched){ %> 
+        <div class="result">
+            <% for(let i = 0 ; i < searchResult.length ; i++){ %> 
+                    <p class="result-items">  - <%= searchResult[i] %> </p> 
+            <% } %> 
+        </div>
+    <% }%> 
+    <% if(notFound){ %> 
+       
+        <div class="add">
+            <h2 class="head-1">
+                Sorry word not found😥
+            </h2>
+            <form class= "container-2" action="/add" method="post">
+                <div class="form-add">
+                    <input class="field" class= "desc-form" type="text" name="item" placeholder="name 🚀">
+                </div>
+                <div class="form-add">
+                    <input type="text" placeholder="Description 💌" class="field-2" class= "desc-form"  name="description" >
+                    <div class="form-button">
+                        <input class="btn" class= "desc-form" type="submit" value="Add">
+                    </div>
+                </div>
+                
+        
+            </form>
+        </div>
+    <% } %> 
+</body>
+</html>
